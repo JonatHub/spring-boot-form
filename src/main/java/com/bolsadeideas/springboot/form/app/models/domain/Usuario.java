@@ -59,7 +59,14 @@ public class Usuario {
 	
 	@NotEmpty
 	private List<Role> roles;
-
+	
+	private Boolean habilitar;
+	
+	@NotEmpty
+	private String genero;
+	
+	private String valorSecreto;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -138,6 +145,30 @@ public class Usuario {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Boolean getHabilitar() {
+		return habilitar;
+	}
+
+	public void setHabilitar(Boolean habilitar) {
+		this.habilitar = habilitar;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getValorSecreto() {
+		return valorSecreto;
+	}
+
+	public void setValorSecreto(String valorSecreto) {
+		this.valorSecreto = valorSecreto;
 	}
 	
 	

@@ -66,6 +66,11 @@ public class FormController {
 		binder.registerCustomEditor(Role.class, "roles", roleEditor);
 	}
 	
+	@ModelAttribute("genero")
+	public List<String> genero(){
+		return Arrays.asList("Hombre", "Mujer");
+	}
+	
 	@ModelAttribute("listaRoles")
 	public List<Role> listaRoles(){
 		return this.roleService.listar();
@@ -119,6 +124,11 @@ public class FormController {
 		usuario.setNombre("John");
 		usuario.setApellido("Doe");
 		usuario.setIdentificador("123.456.789-K");
+		usuario.setHabilitar(true);
+		usuario.setValorSecreto("Algún valor secreto ****");
+		usuario.setPais(new Pais(3, "CL", "Chile"));
+		usuario.setRoles(Arrays.asList(new Role(2, "Usuario", "ROLE_USER")));
+		
 		model.addAttribute("titulo", "Formulario usuarios");
 		model.addAttribute("usuario", usuario);
 		return "form";

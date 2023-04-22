@@ -6,15 +6,20 @@ import javax.validation.constraints.NotEmpty;
 //import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.bolsadeideas.springboot.form.app.validation.IdentificadorRegex;
+import com.bolsadeideas.springboot.form.app.validation.Requerido;
+
 public class Usuario {
 	
 	//@Pattern(regexp = "[0-9]{2}[.][\\d]{3}[.][\\d]{3}[-][A-Z]{1}")
+	@IdentificadorRegex
 	private String identificador;
 	
 	//@NotEmpty(message = "el nombre no puede ser vacio")
 	private String nombre;
 	
-	@NotEmpty
+	//@NotEmpty
+	@Requerido
 	private String apellido;
 
 	@NotBlank
@@ -24,7 +29,7 @@ public class Usuario {
 	@NotEmpty
 	private String password;
 	
-	@NotEmpty
+	@Requerido
 	@Email(message = "correo con formato incorrecto")
 	private String email;
 
